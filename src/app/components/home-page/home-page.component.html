@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="150"
+  (scrolled)="onScroll()">
+<div class="container" *ngFor="let todo of todo">
+  <mat-card class="card">
+    <mat-card-title>
+      <h1>{{todo.title}}</h1>
+    </mat-card-title>
+    <mat-card-content>
+      {{todo.body}}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button [routerLink]="'post/' + todo.id">Detailed</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+</div>

@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+
+<div class="container" *ngFor="let todo of todo">
+  <mat-card class="card" *ngFor="let detailInfo of detailInfo">
+    <mat-card-title>
+      <h1>{{todo.title}}</h1>
+    </mat-card-title>
+    <mat-card-content>
+      {{todo.body}}
+    </mat-card-content>
+    <mat-card-footer>
+      <span>{{detailInfo.name}}</span>
+      <br>
+      <span>{{detailInfo.email}}</span>
+      <br>
+      <button mat-raised-button color="primary" [routerLink]="['/home']">Go home page</button>
+    </mat-card-footer>
+  </mat-card>
+</div>
+
+<h1>Comments ↓</h1>
+
+<div class="container" *ngFor="let postComment of postComments">
+  <mat-card class="card-comment">
+    <mat-card-title>
+      {{postComment.email}}
+    </mat-card-title>
+    <mat-card-content>
+      {{postComment.body}}
+    </mat-card-content>
+  </mat-card>
+</div>
+
+

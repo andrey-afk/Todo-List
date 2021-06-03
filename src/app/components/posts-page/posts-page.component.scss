@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.card {
+  max-width: 400px;
+  border: 1px solid;
+  margin: 10px 0px;
+  border-radius: 29px 0px;
+  background: sandybrown;
+}
+
+.card-comment {
+    max-width: 400px;
+    border: 1px solid;
+    margin: 10px 0px;
+    border-radius: 29px 0px;
+    background: sandybrown;
+  mat-card-title {
+    text-align: center;
+    color: white;
+  }
+}
+
+mat-card-footer {
+  text-align: center;
+  color: white;
+}
+button {
+  margin: 10px 0px;
+}

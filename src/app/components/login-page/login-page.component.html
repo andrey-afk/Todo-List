@@ -1,0 +1,15 @@
+<h1>Sign In Form</h1>
+<div id="wrapper">
+  <form id="signin" method="" action="" autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
+    <input type="text" id="user" name="user" placeholder="email" formControlName="email" />
+      <div *ngIf="form.controls['email'].invalid && form.controls['email'].touched ">-->
+        <small>Введите коректный email</small>
+      </div>
+    <input type="password" id="pass" name="pass" placeholder="password"  formControlName="password"/>
+      <div *ngIf="form.controls['password'].touched && form.controls['password'].invalid">-->
+        <small>Поле password должно быть заполненно</small>
+      </div>
+    <button type="submit" [disabled]="!form.valid">&#xf0da;</button>
+    <p *ngIf="error">{{error}}</p>
+  </form>
+</div>
