@@ -12,6 +12,11 @@ import {MaterialModule} from "./shared/material-module";
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import {HttpClientModule} from "@angular/common/http";
 import {InfiniteScrollModule} from "ngx-infinite-scroll";
+import {StoreFeatureModule, StoreModule} from "@ngrx/store";
+import {EffectsModule} from "@ngrx/effects";
+import {PostEffects} from "./store/post-effects";
+import {postReducer} from "./store/post-reducer";
+import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 
 @NgModule({
   declarations: [
@@ -29,7 +34,14 @@ import {InfiniteScrollModule} from "ngx-infinite-scroll";
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    StoreModule.forRoot({}),
+    StoreModule.forFeature('posts', postReducer),
+    EffectsModule.forRoot([PostEffects]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      autoPause: true, // Pauses recording actions and state changes when the extension window is not open
+    }),
 ],
   providers: [],
   bootstrap: [AppComponent]

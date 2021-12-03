@@ -25,4 +25,8 @@ export class TodoService {
   getAllPostComments(id: number): Observable<PostComments> {
     return this.http.get<PostComments>(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
   }
+  getPosts(): Observable<Todo[]> {
+    return this.http.get<Todo[]>(`https://jsonplaceholder.typicode.com/posts`)
+  }
+
 }
